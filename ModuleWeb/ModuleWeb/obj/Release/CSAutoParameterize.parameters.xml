@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="ModuleWebEntities-Web.config Connection String" description="ModuleWebEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.ModuleWebModel.csdl|res://*/Models.ModuleWebModel.ssdl|res://*/Models.ModuleWebModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=laptop-f16p8h6c\gavriel;initial catalog=TCWSC-Day2-ModuleWeb;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="D:\\Data\ Rio\\TC\ \(Training\ Center\)\ WSC\ 2021\ Shanghai\\TCWSC-Day2\\ModuleWeb\\ModuleWeb\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ModuleWebEntities']/@connectionString" />
+  </parameter>
+</parameters>

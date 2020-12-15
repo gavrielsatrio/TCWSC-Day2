@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+	<style type="text/css">
+
+		#container
+		{
+			padding-bottom: 20px;
+		}
+
+		#navBarSection
+		{
+			padding: 20px;
+		}
+
+		.categories
+		{
+			font-weight: bold;
+			transition: 1s all ease;
+		}
+
+		.categories > *
+		{
+			display: none;
+		}
+
+		.categories > .categoryChildrenActive
+		{
+			display: block;
+		}
+
+		.categoryParent
+		{
+			transition: 1s all ease;
+			display: block;
+			padding: 5px 20px;
+			cursor: pointer;
+		}
+
+		.categoryChildren
+		{
+			transition: 1s all ease;
+			font-weight: bold;
+			color: rgb(160, 160, 160);
+			padding: 5px 40px;
+		}
+
+		#comboSort
+		{
+			display: inline-block;
+		}
+
+		.products
+		{
+			border-radius: 5px;
+			text-align: center;
+			box-shadow: 0px 4px 15px rgba(180, 180, 180, 0.4);
+			margin-bottom: 20px;
+			padding: 20px;
+			cursor: pointer;
+		}
+
+		.productImage
+		{
+			width: 100%;
+		}
+
+		.productName
+		{
+			font-size: 20px;
+			font-weight: bold;
+			margin: 0;
+		}
+
+		.productPrice
+		{
+			margin: 0;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div id="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<div id="navBarSection">
+						<div class="row align-items-center">
+							<div class="col-lg-4">
+								<h3>Module Web</h3>
+							</div>
+							<div class="col-lg-6 text-right">
+								Hello, admin
+							</div>
+							<div class="col-lg-2 text-right">
+								<button class="btn btn-danger" id="btnLogout">Logout</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-9"></div>
+				<div class="col-lg-3">
+					<div id="sortBySection">
+						<table class="table table-borderless">
+							<tr>
+								<td>Urutkan :</td>
+								<td>
+									<select id="comboSort" class="form-control">
+										<option>Highest Price</option>
+										<option>Lowest Price</option>
+										<option>Best Seller</option>
+										<option>Latest</option>
+									</select>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-3">
+					<div id="categorySection">
+						<div class="categories">
+							<p class="categoryParent">Food & Beverage <i class="bx bx-caret-down"></i></p>
+							<p class="categoryChildren">Ready to Cook</p>
+							<p class="categoryChildren">Snack</p>
+						</div>
+						<div class="categories">
+							<p class="categoryParent">Kesehatan <i class="bx bx-caret-down"></i></p>
+							<p class="categoryChildren">Vitamin</p>
+							<p class="categoryChildren">Mask</p>
+						</div>
+						<div class="categories">
+							<p class="categoryParent">Elektronik <i class="bx bx-caret-down"></i></p>
+							<p class="categoryChildren">Audio</p>
+							<p class="categoryChildren">Tablet</p>
+							<p class="categoryChildren">Handphone</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<div id="productSection">
+						<div class="row" id="productContainer">
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	var categories = document.querySelectorAll(".categories");
+
+	function clearClass()
+	{
+		categories.forEach((item, index) => 
+		{
+			var children = item.children;
+			for(i = 0; i < children.length; i++)
+			{
+				var childrenElement = children[i];
+				childrenElement.classList.remove("categoryChildrenActive");
+			}
+		});
+	}
+
+	categories.forEach((item, index) => 
+	{
+		item.onclick = function()
+		{
+			clearClass();
+
+			var children = item.children;
+			for(i = 0; i < children.length; i++)
+			{
+				var childrenElement = children[i];
+				if(childrenElement.className == "categoryChildren")
+				{
+					childrenElement.classList.add("categoryChildrenActive");
+				}
+			}
+		}
+	});
+
+	document.querySelector("#btnLogout").onclick = function()
+	{
+		location.href = "Login.html";
+	};
+
+	for(i = 0; i < 10; i++)
+	{
+		document.querySelector("#productContainer").innerHTML += 
+		`
+			<div class="col-lg-3">
+				<div class="products">
+					<p><img class="productImage" src="Images/QRCode.PNG"></p>
+					<p class="productName">Product Name</p>
+					<p class="productPrice">Rp 10.000</p>
+				</div>
+			</div>
+		`;
+	}
+
+</script>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<style type="text/css">
+
+		#sectionKanan
+		{
+			height: 100%;
+			padding: 40px 20px;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid" id="containerFull">
+		<div id="container">
+			<div class="row align-items-center">
+				<div class="col-lg-6">
+					<div id="sectionKiri" class="text-center">
+						<h1>Module Web</h1>
+						<h5>Try Out WSC - Day 2</h5>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div id="sectionKanan">
+						<h4>Login</h4>
+						<table class="table table-borderless">
+							<tr>
+								<td>Email</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" id="txtEmail" name="email" placeholder="Email" class="form-control" autocomplete="off">
+								</td>
+							</tr>
+							<tr>
+								<td>Password</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="password" id="txtPassword" name="password" placeholder="Password" class="form-control" autocomplete="off">
+								</td>
+							</tr>
+						</table>
+						<p><a href="Register.html">Don't have an account ? Register</a></p>
+						<button class="btn btn-primary" type="submit" id="btnLogin">Login</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+
+	document.querySelector("#btnLogin").onclick = function()
+	{
+		// var data = new FormData();
+		// data.append("email", document.querySelector("#txtEmail").value);
+		// data.append("password", document.querySelector("#txtPassword").value);
+
+		// var ajax = new XMLHttpRequest();
+		// ajax.onreadystatechange = function()
+		// {
+		// 	if(this.readyState == 4 && this.status == 200)
+		// 	{
+		// 		var jsonObject = JSON.parse(this.responseText);
+		// 		if(jsonObject["message"] == "Success")
+		// 		{
+		// 			location.href = "Home.html";
+		// 		}
+		// 	}
+		// };
+		// ajax.open("POST", "http://localhost/TCWSC-Day2Website/Identity/Account/Login");
+		// ajax.setRequestHeader("Content-Type", "application/json");
+		// ajax.send(data);
+
+		location.href = "Home.html";
+	};
+
+</script>
+</html>

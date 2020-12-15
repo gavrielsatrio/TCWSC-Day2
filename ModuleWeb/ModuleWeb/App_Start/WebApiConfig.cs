@@ -19,6 +19,8 @@ namespace ModuleWeb
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Formatters.XmlFormatter.SupportedMediaTypes.Clear();            
         }
     }
 }
